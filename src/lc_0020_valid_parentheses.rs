@@ -18,11 +18,7 @@ pub fn is_valid(s: String) -> bool {
 			_ => return false,
 		}
 	}
-	if stack.len() != 0 {
-		return false;
-	}
-
-	true
+	stack.len() == 0
 }
 
 		// match c {
