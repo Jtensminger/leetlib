@@ -1,39 +1,17 @@
 pub fn is_valid(s: String) -> bool {
-	if s.len() % 2 != 0 || s.len() == 0 {
-		return false
-	}
 
-	let mut peekable = s.chars().peekable();
-	let mut stack: Vec<char> = vec![];
-
-	while peekable.peek() != None {
-		let c = peekable.next();
-		match c {
-			Some(n @ '{') => if peekable.peek() == None { return false } else { stack.push(n); },
-			Some(n @ '(') => if peekable.peek() == None { return false } else { stack.push(n); },
-			Some(n @ '[') => if peekable.peek() == None { return false } else { stack.push(n); },
-			Some('}') => if stack.last() != Some(&'{') { return false } else { stack.pop(); },
-			Some(')') => if stack.last() != Some(&'(') { return false } else { stack.pop(); },
-			Some(']') => if stack.last() != Some(&'[') { return false } else { stack.pop(); },
-			_ => return false,
-		}
+	let mut stack = Vec::new();
+	for i in s.chars() {
+		match i {
+			'{' => stack.push('}'),
+			'(' => stack.push(')'),
+			'[' => stack.push(']'),
+			'}' | ')' | ']' if Some(i) != stack.pop() => return false,
+			_ => (),
+		}	
 	}
-	stack.len() == 0
+	stack.is_empty()
 }
-
-		// match c {
-		// 	Some('{') => if peekable.find(|&x| x == '}') == None {return false},
-		// 	Some('(') => if peekable.find(|&x| x == ')') == None {return false},
-		// 	Some('[') => if peekable.find(|&x| x == ']') == None {return false},
-		// 	_ => return false,
-		// }
-
-		// match c {
-		// 	'{' => if (n != '}') {return false},
-		// 	'(' => if (n != ')') {return false},
-		// 	'[' => if (n != ']') {return false},
-		// 	_ => return false,
-		// }
 
 #[cfg(test)]
 mod test {
