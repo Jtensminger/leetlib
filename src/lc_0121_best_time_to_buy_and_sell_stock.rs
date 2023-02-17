@@ -29,12 +29,9 @@ pub fn max_profit(prices: Vec<i32>) -> i32 {
         prices
                 .iter()
                 .fold((0, i32::MAX), |(mut max_profit, mut prev_lowest_price), current_price| {
-                        dbg!(max_profit); dbg!(prev_lowest_price); dbg!(current_price);
-
                         prev_lowest_price = i32::min(*current_price, prev_lowest_price);
                         max_profit = i32::max(max_profit, current_price-prev_lowest_price);
-
-                        dbg!((max_profit, prev_lowest_price))
+                        (max_profit, prev_lowest_price)
                 }).0
 }
 
