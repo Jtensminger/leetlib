@@ -5,9 +5,11 @@ use std::cell::{Ref, RefCell};
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode<T> {
         pub val: T,
-        pub left: Option<Rc<RefCell<TreeNode<T>>>>,
-        pub right: Option<Rc<RefCell<TreeNode<T>>>>,
+        pub left: Link<T>,
+        pub right: Link<T>,
 }
+
+type Link<T> = Option<Rc<RefCell<TreeNode<T>>>>;
 
 impl<T> TreeNode<T> {
         pub fn new(val: T) -> Self {
@@ -23,9 +25,7 @@ impl<T> TreeNode<T> {
         }
 }
 
-
-
-pub fn invert_tree<T> (root: Option<Rc<RefCell<TreeNode<T>>>>) -> Option<Rc<RefCell<TreeNode<T>>>> {
+pub fn invert_tree<T> (root: Link<T>) -> Link<T> {
         
         if let Some(node) = root.as_ref() {
                 let mut mut_node = node.borrow_mut();
@@ -52,10 +52,11 @@ mod test {
                 root.left = Some(Rc::new(RefCell::new(TreeNode::new(1))));
                 root.right = Some(Rc::new(RefCell::new(TreeNode::new(3))));
                 
-                let inverted = invert_tree(Some(Rc::new(RefCell::new(root))));
-                let l = *inverted.as_ref().unwrap().borrow().left.as_ref().unwrap().borrow().peek();
-                let r = *inverted.as_ref().unwrap().borrow().right.as_ref().unwrap().borrow().peek();
+                let mut inverted = invert_tree(Some(Rc::new(RefCell::new(root))));
+                let l = *inverted.as_mut().unwrap().borrow_mut().left.as_ref().unwrap().borrow().peek();
+                let r = *inverted.as_mut().unwrap().borrow_mut().right.as_ref().unwrap().borrow().peek();
                 assert_eq!(1, r);
                 assert_eq!(3, l);
+
         }
 }
