@@ -1,5 +1,6 @@
 use std::rc::Rc;
-use std::cell::{Ref, RefCell};
+use std::cell::{RefCell};
+// use std::collections::VecDeque;
 
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
@@ -19,10 +20,25 @@ impl<T> TreeNode<T> {
                         right: None
                 }
         }
-        
+        pub fn left(mut self, val: T) -> Self {
+                self.left = Some(Rc::new(RefCell::new(TreeNode::new(val))));
+                self
+        }
+
+        pub fn right(mut self, val: T) -> Self {
+                self.right = Some(Rc::new(RefCell::new(TreeNode::new(val))));
+                self
+        }
+
         pub fn peek(&self) -> &T {
                 &self.val
         }
+
+        // pub fn insert(mut self, val: T) {
+        //         let mut queue: VecDeque<Link<T>> = VecDeque::new();
+                
+        //         queue.push_front(Some(Rc::new(RefCell::new(self))));
+        // }
 }
 
 pub fn invert_tree<T> (root: Link<T>) -> Link<T> {
@@ -37,7 +53,51 @@ pub fn invert_tree<T> (root: Link<T>) -> Link<T> {
 
         root
 }
+// [4,2,7,1,3,6,9,0,0,0,0,0,0,0,0]
+//              4
+//       2           7
+//    1     3     6    9
+//  0  0  0  0  0  0  0  0
 
+// pub fn tree_to_list<T> (tree: Link<T>) -> Vec<T> {
+//         let mut result: Vec<T> = Vec::new();
+//         traverse(tree, &mut result);
+//         result        
+// }
+
+// pub fn traverse<T> (tree: Link<T>, result: &mut Vec<T>) -> Option<bool> {
+//         if tree.is_none() { return None }
+
+//         let current_tree = tree.unwrap();
+//         let current_value = current_tree.borrow().val;
+
+//         result.push(current_value);
+//         traverse(current_tree.to_owned().borrow().left.to_owned(),result);
+//         traverse(current_tree.to_owned().borrow().right.to_owned(),result);
+        
+//         Some(true)
+// }
+
+// pub fn list_to_tree<T> (mut list: Vec<T>) -> Link<T> {
+//         if list.is_empty() { return None } 
+//         if list.len() % 2 == 0 { return None}
+
+//         let mut root = TreeNode::new(list.pop().unwrap())
+//                 .left(list.pop().unwrap())
+//                 .right(list.pop().unwrap());
+        
+//         let mut parent_level: VecDeque<&mut Link<T>> = VecDeque::from([&mut root.left, &mut root.right]);
+
+//         while let Some(parent) = parent_level.pop_back().unwrap() {
+//                 if let (Some(l), Some(r)) = (list.pop(), list.pop()) {
+//                         parent.borrow_mut().left = Some(Rc::new(RefCell::new(TreeNode::new(l))));
+//                         parent.borrow_mut().right = Some(Rc::new(RefCell::new(TreeNode::new(r))));
+//                 }
+//         }
+
+
+//         Some(Rc::new(RefCell::new(root)))
+// }
 
 
 #[cfg(test)]
@@ -57,6 +117,5 @@ mod test {
                 let r = *inverted.as_mut().unwrap().borrow_mut().right.as_ref().unwrap().borrow().peek();
                 assert_eq!(1, r);
                 assert_eq!(3, l);
-
         }
 }
