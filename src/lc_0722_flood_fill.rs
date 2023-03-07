@@ -12,9 +12,9 @@ pub fn flood_fill(image: Vec<Vec<i32>>, sr: i32, sc: i32, color: i32) -> Vec<Vec
         let width = image[0].len();
         let mut image = image;
         
-        let mut queue: Vec<Cell> = Vec::from([init_cell]);
+        let mut queue: VecDeque<Cell> = VecDeque::from([init_cell]);
 
-        while let Some(Cell(row, col)) = queue.pop() {
+        while let Some(Cell(row, col)) = queue.pop_front() {
             
             let same_color = image[row][col] == init_color;
             if !same_color {
@@ -22,16 +22,16 @@ pub fn flood_fill(image: Vec<Vec<i32>>, sr: i32, sc: i32, color: i32) -> Vec<Vec
             }
             image[row][col] = color;
             if row > 0 {
-                queue.push(Cell(row - 1, col));
+                queue.push_back(Cell(row - 1, col));
             }
             if row + 1 < height {
-                queue.push(Cell(row + 1, col));
+                queue.push_back(Cell(row + 1, col));
             }
             if col > 0 {
-                queue.push(Cell(row, col - 1));
+                queue.push_back(Cell(row, col - 1));
             }
             if col + 1 < width {
-                queue.push(Cell(row, col + 1));
+                queue.push_back(Cell(row, col + 1));
             }
         }
 
