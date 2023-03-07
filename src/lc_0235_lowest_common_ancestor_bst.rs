@@ -52,30 +52,32 @@ impl TreeNode {
 
 use std::rc::Rc;
 use std::cell::RefCell;
-pub fn lowest_common_ancestor(mut root: Option<Rc<RefCell<TreeNode>>>, p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-        let mut lo = p.unwrap().borrow().val;
-        let mut hi = q.unwrap().borrow().val;
-        
-        if lo > hi {
-                let tmp = lo;
-                lo = hi;
-                hi = tmp;
+
+pub fn lowest_common_ancestor(root: Option<Rc<RefCell<TreeNode>>>, p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
+        let p_val = p.unwrap().borrow().val;   
+        let q_val = q.unwrap().borrow().val;
+        lca_recursive(&root, p_val, q_val)
+}
+
+fn lca_recursive(root: &Option<Rc<RefCell<TreeNode>>>, lower: i32, higher: i32) -> Option<Rc<RefCell<TreeNode>>> {
+        if lower > higher {
+                return lca_recursive(root, higher, lower);
         }
 
-        println!("lo {lo:?}");
+        match root {
+                Some(cell) => {
+                        let val = cell.borrow().val;
 
-        while let Some(n) = root {
-                let v = n.borrow().val;
-                if v == hi || v == lo || (hi > v && v > lo) {
-                        return Some(n);
-                }
-                if v > hi {
-                        root = n.borrow().left.clone();
-                } else {
-                        root = n.borrow().right.clone();
-                }
+                        if higher < val {
+                                lca_recursive(&cell.borrow().left, lower, higher)
+                        } else if lower > val {
+                                lca_recursive(&cell.borrow().right, lower, higher)
+                        } else {
+                                Some(Rc::new(RefCell::new(TreeNode::new(val))))
+                        }
+                },
+                None => None,
         }
-        root
 }
 
 
