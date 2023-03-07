@@ -1,3 +1,6 @@
+pub mod lc_0722_flood_fill;
+pub use lc_0722_flood_fill::*;
+
 pub mod lc_0704_binary_search;
 pub use lc_0704_binary_search::*;
 
