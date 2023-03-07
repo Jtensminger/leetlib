@@ -7,6 +7,9 @@ pub use lc_0704_binary_search::*;
 pub mod lc_0242_valid_anagram;
 pub use lc_0242_valid_anagram::*;
 
+pub mod lc_0235_lowest_common_ancestor_bst;
+pub use lc_0235_lowest_common_ancestor_bst::*;
+
 pub mod lc_0226_invert_binary_tree;
 pub use lc_0226_invert_binary_tree::*;
 
