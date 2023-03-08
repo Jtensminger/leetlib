@@ -13,6 +13,9 @@ pub use lc_0235_lowest_common_ancestor_bst::*;
 pub mod lc_0226_invert_binary_tree;
 pub use lc_0226_invert_binary_tree::*;
 
+pub mod lc_0232_implement_queue_using_stacks;
+pub use lc_0232_implement_queue_using_stacks::*;
+
 pub mod lc_0125_valid_palindrome;
 pub use lc_0125_valid_palindrome::*;
 

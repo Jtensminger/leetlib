@@ -51,7 +51,7 @@ fn height(root: &Option<Rc<RefCell<TreeNode>>>) -> i32 {
 mod test {
         use super::*;
 
-        //#[test] 
+        #[test] 
         fn ext1() {
                 let root = Some(Rc::new(RefCell::new(TreeNode {
                         val: 1,
