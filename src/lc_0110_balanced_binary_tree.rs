@@ -29,30 +29,21 @@ Definition: Height-balanced...
  */
 
 pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-        balanced(&root)
-}
-
-fn balanced(root: &Option<Rc<RefCell<TreeNode>>>) -> bool {
-        match root {
-                Some(root) => {
-                        let l = height(&root.borrow().left);
-                        let r = height(&root.borrow().right);
-
-                        1 >= i32::abs(l - r) && balanced(&root.borrow().left) && balanced(&root.borrow().right)
-                },
-                None => true
-        }
+        height(&root) != -1
 }
 
 fn height(root: &Option<Rc<RefCell<TreeNode>>>) -> i32 {
         match root {
                 Some(node) => {
-                        i32::max(
-                                height(&node.as_ref().borrow().left),
-                                height(&node.as_ref().borrow().right)
-                        ) + 1
+                        let left = height(&node.borrow().left);
+                        let right = height(&node.borrow().right);
+                        
+                        if i32::abs(left - right) > 1 || left == -1 || right == -1 {
+                                return -1
+                        }
+                        i32::max(left, right) + 1
                 },
-                _ => 0
+                None => 0
         }
 }
 
@@ -60,7 +51,7 @@ fn height(root: &Option<Rc<RefCell<TreeNode>>>) -> i32 {
 mod test {
         use super::*;
 
-        #[test] 
+        //#[test] 
         fn ext1() {
                 let root = Some(Rc::new(RefCell::new(TreeNode {
                         val: 1,
@@ -84,7 +75,7 @@ mod test {
                 assert_eq!(false, is_balanced(root));
         }
 
-        //#[test]
+        #[test]
         fn ext2() {
                 let root = Some(Rc::new(RefCell::new(TreeNode {
                         val: 3,
