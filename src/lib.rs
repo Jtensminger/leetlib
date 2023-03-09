@@ -4,6 +4,9 @@ pub use lc_0722_flood_fill::*;
 pub mod lc_0704_binary_search;
 pub use lc_0704_binary_search::*;
 
+pub mod lc_0278_first_bad_version;
+pub use lc_0278_first_bad_version::*;
+
 pub mod lc_0242_valid_anagram;
 pub use lc_0242_valid_anagram::*;
 
