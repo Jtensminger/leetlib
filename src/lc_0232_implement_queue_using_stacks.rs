@@ -1,3 +1,5 @@
+/* #TAGS[Stack, Queue] #DIFFICULTY[Easy] #URL[https://leetcode.com/problems/implement-queue-using-stacks/] */
+
 #[derive(Default)]
 struct MyQueue {
         stack_back: Vec<i32>,

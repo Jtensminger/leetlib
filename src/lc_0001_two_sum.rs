@@ -1,3 +1,4 @@
+/* #TAGS[Array, Hash Table] #DIFFICULTY[Easy] #URL[https://leetcode.com/problems/two-sum/] */
 use std::collections::HashMap;
 
 // BRUTE FORCE

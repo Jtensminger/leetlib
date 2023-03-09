@@ -1,3 +1,5 @@
+/* #TAGS[String, Stack] #DIFFICULTY[Easy] URL#[https://leetcode.com/problems/valid-parentheses/] */
+
 pub fn is_valid(s: String) -> bool {
 
 	let mut stack = Vec::new();

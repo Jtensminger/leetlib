@@ -1,3 +1,5 @@
+/* #TAGS[Binary Search, Array] #DIFFICULTY[Easy] #URL[https://leetcode.com/problems/binary-search/] */
+
 use std::cmp::Ordering::{Greater,Equal,Less};
 // if nums.contains(target) == return index
 // else return -1

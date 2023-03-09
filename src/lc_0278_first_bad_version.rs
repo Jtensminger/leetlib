@@ -1,3 +1,5 @@
+/* #TAGS[Binary Tree, Binary Search] #DIFFICULTY[Easy] #URL[https://leetcode.com/problems/first-bad-version/] */
+
 struct ProductLog {
         versions: Vec<i32>,
         first_bad_version: i32,
