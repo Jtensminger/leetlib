@@ -7,7 +7,7 @@ pub fn can_construct(ransom_note: String, magazine: String) -> bool {
         if ransom_note.len() > magazine.len() { return false }
 
         let mut ran_b = ransom_note.into_bytes().into_iter();
-        let mut mag_b = magazine.into_bytes().into_iter();
+        let mag_b = magazine.into_bytes().into_iter();
 
         // (item, count)
         let mut hm: HashMap<u8, i32> = HashMap::new();
