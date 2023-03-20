@@ -4,6 +4,9 @@ pub use lc_0722_flood_fill::*;
 pub mod lc_0704_binary_search;
 pub use lc_0704_binary_search::*;
 
+pub mod lc_0409_longest_palindrome;
+pub use lc_0409_longest_palindrome::*;
+
 pub mod lc_0383_ransom_note;
 pub use lc_0383_ransom_note::*;
 
