@@ -49,7 +49,7 @@ pub fn invert_tree<T> (root: Link<T>) -> Link<T> {
                 let mut mut_node = node.borrow_mut();
                 invert_tree(mut_node.left.clone());
                 invert_tree(mut_node.right.clone());
-                let mut x = &mut *mut_node;
+                let x = &mut *mut_node;
                 std::mem::swap(&mut x.left, &mut x.right);
         }
 

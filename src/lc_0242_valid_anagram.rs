@@ -1,6 +1,5 @@
 /* #TAGS[Hash Table, String, Sorting] #DIFFICULTY[Easy] #URL[https://leetcode.com/problems/valid-anagram/] */
 
-use std::collections::HashMap;
         // contains the same letters, no extras, none missing
         // create hashtable of S
         // if all of t chars exist in Hashtable only once

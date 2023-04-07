@@ -86,7 +86,6 @@ fn lca_recursive(root: &Option<Rc<RefCell<TreeNode>>>, lower: i32, higher: i32) 
 
 
 mod test {
-        use super::*;
 
         #[test]
         fn ext1() {

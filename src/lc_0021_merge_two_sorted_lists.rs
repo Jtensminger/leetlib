@@ -20,7 +20,7 @@ pub struct ListNode {
 
 impl ListNode {
         #[inline]
-        fn new(val: i32) -> Self {
+        pub fn new(val: i32) -> Self {
                 ListNode {
                         next: None,
                         val
@@ -61,11 +61,11 @@ mod tests {
         #[test]
         fn ext1() {
 
-                let mut l2 = Some(Box::new(ListNode::new(2)));
+                let l2 = Some(Box::new(ListNode::new(2)));
 
-                let mut l3 = Some(Box::new(ListNode { val: 3, next: l2 }));
+                let l3 = Some(Box::new(ListNode { val: 3, next: l2 }));
 
-                let mut l1 = Some(Box::new(ListNode::new(1)));
+                let l1 = Some(Box::new(ListNode::new(1)));
 
                 let merged = merge_two_lists(l3, l1);
                 

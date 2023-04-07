@@ -1,31 +1,31 @@
 /* #TAGS[Stack, Queue] #DIFFICULTY[Easy] #URL[https://leetcode.com/problems/implement-queue-using-stacks/] */
 
 #[derive(Default)]
-struct MyQueue {
+pub struct MyQueue {
         stack_back: Vec<i32>,
         stack_front: Vec<i32>,
 }
 
 impl MyQueue {
-        fn new() -> Self {
+        pub fn new() -> Self {
                 Default::default()
         }
 
-        fn push(&mut self, x: i32) {
+        pub fn push(&mut self, x: i32) {
                 self.stack_back.push(x);
         }
 
-        fn pop(&mut self) -> i32 {
+        pub fn pop(&mut self) -> i32 {
                 self.move_back_to_front();
                 self.stack_front.pop().unwrap()
         }
 
-        fn peek(&mut self) -> i32 {
+        pub fn peek(&mut self) -> i32 {
                 self.move_back_to_front();
                 *self.stack_front.last().unwrap()
         }
 
-        fn empty(&self) -> bool {
+        pub fn empty(&self) -> bool {
                 self.stack_front.is_empty() && self.stack_back.is_empty()
         }
 

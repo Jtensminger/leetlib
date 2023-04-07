@@ -1,6 +1,6 @@
 /* #TAGS[Binary Tree, Binary Search] #DIFFICULTY[Easy] #URL[https://leetcode.com/problems/first-bad-version/] */
 
-struct ProductLog {
+pub struct ProductLog {
         versions: Vec<i32>,
         first_bad_version: i32,
         checks: u32
@@ -15,7 +15,7 @@ impl ProductLog {
                 }
         }
 
-        pub fn first_bad_version(&mut self, n: i32) -> i32 {
+        pub fn first_bad_version(&mut self, _n: i32) -> i32 {
                 let v = self.versions.clone();
                 let i = v.partition_point(|x| !self.is_bad_version(*x));
                 self.versions[i]
