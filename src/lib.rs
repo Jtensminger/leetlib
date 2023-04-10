@@ -51,3 +51,6 @@ pub use lc_0001_two_sum::*;
 
 pub mod lc_0067_add_binary;
 pub use lc_0067_add_binary::*;
+
+pub mod lc_0206_reverse_linked_list;
+pub use lc_0206_reverse_linked_list::*;
