@@ -54,3 +54,6 @@ pub use lc_0067_add_binary::*;
 
 pub mod lc_0206_reverse_linked_list;
 pub use lc_0206_reverse_linked_list::*;
+
+pub mod lc_0543_diameter_of_binary_tree;
+pub use lc_0543_diameter_of_binary_tree::*;

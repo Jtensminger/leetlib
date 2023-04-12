@@ -61,7 +61,7 @@ fn to_value(c: Option<char>) -> bool {
 }
 
 
-pub mod tests {
+mod tests {
         use super::*;
 
         #[test]
