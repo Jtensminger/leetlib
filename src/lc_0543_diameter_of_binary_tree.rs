@@ -26,8 +26,7 @@ pub fn diameter_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         // get the height of left & right sub-trees
         // diameter = sum of left & right heights
         match root {
-                rt => dfs(&rt).1,
-                _ => 0
+                rt => dfs(&rt).1
         }
 }
 

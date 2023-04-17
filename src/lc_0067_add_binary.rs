@@ -60,8 +60,8 @@ fn to_value(c: Option<char>) -> bool {
 	}
 }
 
-
-mod tests {
+#[cfg(test)]
+mod test {
         use super::*;
 
         #[test]
