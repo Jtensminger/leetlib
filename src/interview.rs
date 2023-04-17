@@ -2,7 +2,7 @@
 // Vector
 #[allow(dead_code)]
 fn vector() {
-    // creation
+    // initialization
         let mut v = vec![1,2,3]; // Vec::new();
     // length
         v.len(); 
@@ -17,7 +17,7 @@ fn vector() {
 // Queue
 #[allow(dead_code)]
 fn deque() {
-    // creation
+    // initialization
         use std::collections::VecDeque;
         let mut d: VecDeque<u32> = VecDeque::new();
     // length
@@ -35,7 +35,7 @@ fn deque() {
 // Hashmap
 #[allow(dead_code)]
 fn hashmap() {
-    // creation
+    // initialization
         use std::collections::HashMap;
         let mut hm: HashMap<i32, i32> = HashMap::new();
     // length
@@ -64,7 +64,7 @@ fn hashmap() {
             val
             }
         }
-}
+    }
 
 
 // Binary Tree Definition
