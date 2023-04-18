@@ -66,3 +66,6 @@ pub use lc_1419_minimum_number_of_frogs_croaking::*;
 
 pub mod lc_1768_merge_strings_alternatively;
 pub use lc_1768_merge_strings_alternatively::*;
+
+pub mod lc_0118_pascals_triangle;
+pub use lc_0118_pascals_triangle::*;
