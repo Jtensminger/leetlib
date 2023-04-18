@@ -13,7 +13,7 @@
 // *= this follows the one-pointers structure but uses pattern matching instead of pointers
 
 // Complexity Analysis: m = word1.len(), n = word2.len()
-// Time complexity: O(m + n)
+// Time complexity: O(MAX(m,n))
 // Space complexity: O(1)
 pub fn merge_alternately(word1: String, word2: String) -> String {
 	let mut w1 = word1.chars();
