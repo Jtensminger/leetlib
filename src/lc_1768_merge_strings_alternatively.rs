@@ -10,8 +10,11 @@
 // *= # of iterations = longest word
 // *= by looping the longest iteration, I don't have create code for handing the remaining characters of the longer string
 // *= by using iterators & pattern matching instead of accessing a list via index, I never have to worry about index out of bounds errors
-// *= 
+// *= this follows the one-pointers structure but uses pattern matching instead of pointers
 
+// Complexity Analysis: m = word1.len(), n = word2.len()
+// Time complexity: O(m + n)
+// Space complexity: O(1)
 pub fn merge_alternately(word1: String, word2: String) -> String {
 	let mut w1 = word1.chars();
 	let mut w2 = word2.chars();
