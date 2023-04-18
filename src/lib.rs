@@ -60,3 +60,6 @@ pub use lc_0543_diameter_of_binary_tree::*;
 
 pub mod interview;
 pub use interview::*;
+
+pub mod lc_1419_minimum_number_of_frogs_croaking;
+pub use lc_1419_minimum_number_of_frogs_croaking::*;
