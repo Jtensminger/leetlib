@@ -69,3 +69,6 @@ pub use lc_1768_merge_strings_alternatively::*;
 
 pub mod lc_0118_pascals_triangle;
 pub use lc_0118_pascals_triangle::*;
+
+pub mod lc_0052_maximum_subarray;
+pub use lc_0052_maximum_subarray::*;
