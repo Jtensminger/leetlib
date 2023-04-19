@@ -9,8 +9,7 @@ pub fn max_sub_array(nums: Vec<i32>) -> i32 {
 	let mut window_sum = 0;
 	
 	for i in 0..nums.len() {
-		window_sum = window_sum.max(0);
-		window_sum += nums[i];
+		window_sum = window_sum.max(0) + nums[i];
 		max_sum = max_sum.max(window_sum);
 	}
 
@@ -45,7 +44,29 @@ mod test {
 	}
 }
 
+/*
+Key Insights:
+When solving the Maximum Subarray problem, several key insights can help you find an optimal solution:
 
+1) Subarray continuity:
+	The subarray must be contiguous, meaning you can't skip any elements within the subarray.
+	This property is crucial when devising a solution because it constrains the possibilities you need to explore.
+
+2) Local vs. global maxima:
+	The problem asks for a global maximum subarray sum, which means the largest sum across all possible subarrays.
+	However, it's helpful to consider the local maximum subarray sum as you iterate through the array.
+	This insight is the basis for Kadane's algorithm, which compares local maxima at each step to find the global maximum.
+
+3) Optimal substructure:
+	The Maximum Subarray problem has an optimal substructure, meaning the solution can be built from optimal solutions to overlapping subproblems.
+	This property allows you to use dynamic programming approaches, such as memoization and bottom-up algorithms, to find the optimal solution efficiently.
+
+4) Divide and conquer:
+	The problem can be solved using a divide-and-conquer strategy by recursively breaking the problem down into smaller subproblems.
+	This approach is less efficient than Kadane's algorithm but helps to illustrate how the problem can be solved using different techniques.
+
+
+ */
 
 
 /*
