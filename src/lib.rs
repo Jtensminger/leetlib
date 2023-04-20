@@ -72,3 +72,6 @@ pub use lc_0118_pascals_triangle::*;
 
 pub mod lc_0052_maximum_subarray;
 pub use lc_0052_maximum_subarray::*;
+
+pub mod lc_0152_maximum_product_sub_array;
+pub use lc_0152_maximum_product_sub_array::*;
