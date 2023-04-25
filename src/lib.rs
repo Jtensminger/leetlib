@@ -78,3 +78,6 @@ pub use lc_0152_maximum_product_sub_array::*;
 
 pub mod lc_1929_concatentation_of_array;
 pub use lc_1929_concatentation_of_array::*;
+
+pub mod lc_1920_build_array_from_permutation;
+pub use lc_1920_build_array_from_permutation::*;
