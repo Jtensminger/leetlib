@@ -84,3 +84,6 @@ pub use lc_1920_build_array_from_permutation::*;
 
 pub mod lc_1108_defanging_an_ip_address;
 pub use lc_1108_defanging_an_ip_address::*;
+
+pub mod lc_1470_shuffle_the_array;
+pub use lc_1470_shuffle_the_array::*;
