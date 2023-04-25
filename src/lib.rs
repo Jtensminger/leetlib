@@ -87,3 +87,6 @@ pub use lc_1108_defanging_an_ip_address::*;
 
 pub mod lc_1470_shuffle_the_array;
 pub use lc_1470_shuffle_the_array::*;
+
+pub mod lc_2011_final_value_of_variable_after_performing_operations;
+pub use lc_2011_final_value_of_variable_after_performing_operations::*;
