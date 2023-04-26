@@ -90,3 +90,6 @@ pub use lc_1470_shuffle_the_array::*;
 
 pub mod lc_2011_final_value_of_variable_after_performing_operations;
 pub use lc_2011_final_value_of_variable_after_performing_operations::*;
+
+pub mod lc_0009_palindrome_number;
+pub use lc_0009_palindrome_number::*;
