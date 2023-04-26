@@ -93,3 +93,6 @@ pub use lc_2011_final_value_of_variable_after_performing_operations::*;
 
 pub mod lc_0009_palindrome_number;
 pub use lc_0009_palindrome_number::*;
+
+pub mod lc_0217_contains_duplicate;
+pub use lc_0217_contains_duplicate::*;
