@@ -9,9 +9,7 @@ Constraints:
 pub fn move_zeroes(nums: &mut Vec<i32>) {
 	let l = nums.len();
 	nums.retain(|&x| x != 0);
-	for _ in 0..l - nums.len() {
-		nums.push(0);
-	}
+	nums.resize_with(l, || 0);
 }
 
 mod test {
