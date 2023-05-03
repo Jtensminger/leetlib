@@ -96,3 +96,6 @@ pub use lc_0009_palindrome_number::*;
 
 pub mod lc_0217_contains_duplicate;
 pub use lc_0217_contains_duplicate::*;
+
+pub mod lc_0283_move_zeros;
+pub use lc_0283_move_zeros::*;
