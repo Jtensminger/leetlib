@@ -18,24 +18,23 @@ Algo:
 use std::collections::HashMap;
 
 pub fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
-        
+
         // hashmap of the sorted version of each string
-        let mut map: HashMap<String, Vec<String>> = HashMap::with_capacity(strs.len());
+        let mut map: HashMap<[u8; 26], Vec<String>> = HashMap::with_capacity(strs.len());
 
         // hash each string <AND> store original string alongside it
-        for i in 0..strs.len() {
-                let mut key: Vec<char> = strs[i].clone().chars().collect();
-                key.sort();
-                let key: String = key.iter().collect();
-                map.entry(key)
-                        .and_modify(|v| v.push(strs[i].clone()))
-                        .or_insert(vec![strs[i].clone()]);
+        for i in strs {
+                let mut key: [u8; 26] = [0; 26];
+                i.chars().for_each(|c| key[c as usize - 'a' as usize] += 1 );
+                
+                match map.get_mut(&key) {
+                        Some(v) => { v.push(i); }
+                        _ => { map.insert(key, vec![i]); }
+                }        
         }
         
         // convert hashmap into Vec<Vec<String>>
-        map.into_iter()
-                .map(|(_k, group)| group)
-                .collect()
+        map.into_values().collect()
 }
 
 #[cfg(test)]
