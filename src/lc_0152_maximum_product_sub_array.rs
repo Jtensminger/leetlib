@@ -25,7 +25,7 @@ pub fn max_product(nums: Vec<i32>) -> i32 {
 	}
 	max_product
 }
-
+#[cfg(test)]
 mod test {
 	use super::*;
 

@@ -80,6 +80,7 @@ pub fn sorted_squares(nums: Vec<i32>) -> Vec<i32> {
         res
 }
 
+#[cfg(test)]
 mod test {
         use super::*;
         #[test]

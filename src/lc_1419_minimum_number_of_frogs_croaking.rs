@@ -45,7 +45,7 @@ pub fn min_number_of_frogs(croak_of_frogs: String) -> i32 {
 	max_frogs
 }
 
-
+#[cfg(test)]
 mod tests {
 	use super::*;
 

@@ -102,3 +102,6 @@ pub use lc_0283_move_zeros::*;
 
 pub mod lc_0977_squares_of_sorted_array;
 pub use lc_0977_squares_of_sorted_array::*;
+
+pub mod lc_0049_group_anagrams;
+pub use lc_0049_group_anagrams::*;

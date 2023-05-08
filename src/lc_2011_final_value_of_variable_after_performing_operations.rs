@@ -10,6 +10,7 @@ pub fn final_value_after_operations(operations: Vec<String>) -> i32 {
         x
 }
 
+#[cfg(test)]
 mod test {
     use super::*;
 

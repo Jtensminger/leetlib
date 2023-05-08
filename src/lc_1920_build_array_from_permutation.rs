@@ -5,6 +5,7 @@ pub fn build_array(nums: Vec<i32>) -> Vec<i32> {
             .collect()
 }
 
+#[cfg(test)]
 mod test {
     use super::*;
 

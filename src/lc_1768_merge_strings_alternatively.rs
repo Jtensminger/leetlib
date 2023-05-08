@@ -32,7 +32,7 @@ pub fn merge_alternately(word1: String, word2: String) -> String {
 	merged
 }
 
-
+#[cfg(test)]
 mod test {
 	use super::*;
 

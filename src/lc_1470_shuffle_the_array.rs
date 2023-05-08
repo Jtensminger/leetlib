@@ -14,7 +14,7 @@ pub fn shuffle(nums: Vec<i32>, n: i32) -> Vec<i32> {
         result
 }
 
-
+#[cfg(test)]
 mod tests {
     use super::*;
 

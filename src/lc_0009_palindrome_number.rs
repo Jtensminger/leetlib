@@ -3,6 +3,7 @@ pub fn is_palindrome(x: i32) -> bool {
 	y == x.to_string()
 }
 
+#[cfg(test)]
 mod test {
         use super::*;
 
