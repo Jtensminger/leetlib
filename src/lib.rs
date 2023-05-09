@@ -105,3 +105,6 @@ pub use lc_0977_squares_of_sorted_array::*;
 
 pub mod lc_0049_group_anagrams;
 pub use lc_0049_group_anagrams::*;
+
+pub mod lc_0347_top_k_frequent_elements;
+pub use lc_0347_top_k_frequent_elements::*;
