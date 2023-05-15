@@ -108,3 +108,6 @@ pub use lc_0049_group_anagrams::*;
 
 pub mod lc_0347_top_k_frequent_elements;
 pub use lc_0347_top_k_frequent_elements::*;
+
+pub mod lc_0013_roman_to_integer;
+pub use lc_0013_roman_to_integer::*;
