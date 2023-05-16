@@ -8,30 +8,21 @@ Constraints:
         strs[i] consists of only lowercase English letters.
  */
 
-pub fn longest_common_prefix(strs: Vec<String>) -> String {
-        /* walk all strings at the same time via indexing */
+ pub fn longest_common_prefix(strs: Vec<String>) -> String {
         if strs.is_empty() {
                 return String::from("");
         }
-        let mut stack = Vec::with_capacity(strs.len());
-        let mut common_prefix = vec![];
-        for idx in 0..strs[0].len() {
-                for word in &strs {
-                        if idx < word.len() {
-                                stack.push(word.chars().nth(idx).unwrap());
-                            } else {
-                                // If a string is shorter than the first string, break out of the loop
-                                return common_prefix.iter().collect::<String>();
-                            }                }
-                let letter = stack[0] as char;
-                if stack.iter().all(|&x| x == letter) {
-                        common_prefix.push(letter);
-                        stack.clear(); 
-                } else {
-                        break
-                }
-        }
-        common_prefix.iter().collect::<String>()
+    
+        let shortest_word_len = strs.iter().map(|s| s.len()).min().unwrap_or(0);
+        let first_word = &strs[0];
+    
+        (0..shortest_word_len)
+                .take_while(|&idx| {
+                        let ch = first_word.chars().nth(idx).unwrap();
+                        strs.iter().all(|word| word.chars().nth(idx).unwrap() == ch)
+                 })
+                .map(|idx| first_word.chars().nth(idx).unwrap())
+                .collect()
 }
 
 #[cfg(test)]
