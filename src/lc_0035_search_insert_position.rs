@@ -20,11 +20,13 @@ pub fn recurse(nums: &[i32], target: i32) -> i32 {
         let mid = nums.len() / 2;
         /* base_case: target isn't in nums */
         if nums.len() == 1 {
-                return if target < nums[mid] {
+                return if target <= nums[mid] {
                      mid as i32
                 } else {
                     (mid as i32) + 1
                 }
+        } else if nums.len() == 0 {
+                return mid as i32
         }
         /* walk the side of the array ~possibly~ containing target  */
         match target.cmp(&nums[mid]) {
