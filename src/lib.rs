@@ -117,3 +117,6 @@ pub use lc_0014_longest_common_prefix::*;
 
 pub mod lc_0035_search_insert_position;
 pub use lc_0035_search_insert_position::*;
+
+pub mod lc_0238_product_of_array_except_self;
+pub use lc_0238_product_of_array_except_self::*;
