@@ -114,3 +114,6 @@ pub use lc_0013_roman_to_integer::*;
 
 pub mod lc_0014_longest_common_prefix;
 pub use lc_0014_longest_common_prefix::*;
+
+pub mod lc_0035_search_insert_position;
+pub use lc_0035_search_insert_position::*;
