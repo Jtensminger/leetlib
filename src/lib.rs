@@ -123,3 +123,6 @@ pub use lc_0238_product_of_array_except_self::*;
 
 pub mod lc_0128_longest_consecutive_sequence;
 pub use lc_0128_longest_consecutive_sequence::*;
+
+pub mod lc_0015_3sum;
+pub use lc_0015_3sum::*;
