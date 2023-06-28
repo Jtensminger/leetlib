@@ -126,3 +126,6 @@ pub use lc_0128_longest_consecutive_sequence::*;
 
 pub mod lc_0015_3sum;
 pub use lc_0015_3sum::*;
+
+pub mod lc_0011_container_with_most_water;
+pub use lc_0011_container_with_most_water::*;
