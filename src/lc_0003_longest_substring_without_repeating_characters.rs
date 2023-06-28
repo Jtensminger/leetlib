@@ -14,7 +14,7 @@ pub fn length_of_longest_substring(s: String) -> i32 {
         let mut longest = 0;
         for letter in s.chars() {
                 while deq.contains(&letter) {
-                        &deq.pop_front();
+                        deq.pop_front();
                 }
                 deq.push_back(letter);
                 longest = longest.max(deq.len());
