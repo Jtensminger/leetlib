@@ -38,15 +38,16 @@ pub fn max_area_slices(height: Vec<i32>) -> i32 {
 }
 
 pub fn max_area_recurse(height: &[i32], mut max_area: i32) -> i32 {
-        if height.len() == 1 || height.len() == 0  { return max_area }
-        let (left, right) = (0, height.len() - 1);
-        let area = min(height[left], height[right]) * ((right - left) as i32);
-        max_area = max(area, max_area);
-        if height[left] < height[right] {
-                max_area_recurse(&height[left+1..], max_area)
-        } else {
-                max_area_recurse(&height[..=right-1], max_area)
+        if let (Some(l), Some(r)) = (height.first(), height.last()) {
+                let area = min(l, r) * (height.len() as i32 - 1);
+                max_area = max(area, max_area);
+                return if l < r {
+                        max_area_recurse(&height[1..], max_area)
+                } else {
+                        max_area_recurse(&height[..height.len()-1], max_area)
+                }
         }
+        max_area
 }
 
 #[cfg(test)]
