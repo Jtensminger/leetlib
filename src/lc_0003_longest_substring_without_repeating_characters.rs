@@ -10,7 +10,7 @@
 /* optimal approach */
 use std::collections::VecDeque;
 pub fn length_of_longest_substring(s: String) -> i32 {
-        let mut deq = VecDeque::new();
+        let mut deq = VecDeque::with_capacity(s.len());
         let mut longest = 0;
         for letter in s.chars() {
                 while deq.contains(&letter) {
