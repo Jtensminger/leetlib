@@ -7,23 +7,19 @@
 
 
 
-/* naive approach */
-use std::collections::HashSet;
+/* optimal approach */
 use std::collections::VecDeque;
 pub fn length_of_longest_substring(s: String) -> i32 {
-        if s.len() == 1 || s.len() == 0 { return s.len() as i32 }
         let mut deq = VecDeque::new();
-        let mut bag = HashSet::with_capacity(s.len());
-        let mut max_len = 0;
+        let mut longest = 0;
         for letter in s.chars() {
-                while bag.contains(&letter) {
-                        bag.remove(&deq.pop_front().unwrap());
+                while deq.contains(&letter) {
+                        &deq.pop_front();
                 }
                 deq.push_back(letter);
-                bag.insert(letter);
-                max_len = max_len.max(deq.len());
+                longest = longest.max(deq.len());
         }
-        max_len as i32
+        longest as i32
 }
 
 #[cfg(test)]
