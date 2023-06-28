@@ -7,19 +7,41 @@
 
 
 
-/* optimal approach */
-use std::collections::VecDeque;
+
+/* Sliding Window w/ VecQeque */
+// use std::collections::VecDeque;
+// pub fn length_of_longest_substring(s: String) -> i32 {
+//         let mut deq = VecDeque::with_capacity(s.len());
+//         let mut longest = 0;
+//         for letter in s.chars() {
+//                 while deq.contains(&letter) {
+//                         deq.pop_front();
+//                 }
+//                 deq.push_back(letter);
+//                 longest = longest.max(deq.len());
+//         }
+//         longest as i32
+// }
+
+/* Sliding Window w/ Set */
+use std::collections::HashSet;
+
 pub fn length_of_longest_substring(s: String) -> i32 {
-        let mut deq = VecDeque::with_capacity(s.len());
-        let mut longest = 0;
-        for letter in s.chars() {
-                while deq.contains(&letter) {
-                        deq.pop_front();
-                }
-                deq.push_back(letter);
-                longest = longest.max(deq.len());
+        let (mut start, mut max_len) = (0, 0);
+        let mut chars_seen = HashSet::with_capacity(s.len());
+        for end in 0..s.len() {
+            // If a repeated character is encountered, remove characters from the start of the window
+            // until the repeated character is gone.
+            while chars_seen.contains(&s[end..end+1]) {
+                chars_seen.remove(&s[start..start+1]);
+                start += 1;
+            }
+            // Add the new character to the set of seen characters.
+            chars_seen.insert(&s[end..end+1]);
+            // Update max_len if the length of the current window is greater.
+            max_len = max_len.max(end - start + 1);
         }
-        longest as i32
+        max_len as i32
 }
 
 #[cfg(test)]
