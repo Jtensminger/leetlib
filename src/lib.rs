@@ -129,3 +129,6 @@ pub use lc_0015_3sum::*;
 
 pub mod lc_0011_container_with_most_water;
 pub use lc_0011_container_with_most_water::*;
+
+pub mod lc_0003_longest_substring_without_repeating_characters;
+pub use lc_0003_longest_substring_without_repeating_characters::*;
