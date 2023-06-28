@@ -33,6 +33,22 @@ pub fn max_area(height: Vec<i32>) -> i32 {
         max_area
 }
 
+pub fn max_area_slices(height: Vec<i32>) -> i32 {
+        max_area_recurse(&height[..], 0)
+}
+
+pub fn max_area_recurse(height: &[i32], mut max_area: i32) -> i32 {
+        if height.len() == 1 || height.len() == 0  { return max_area }
+        let (left, right) = (0, height.len() - 1);
+        let area = min(height[left], height[right]) * ((right - left) as i32);
+        max_area = max(area, max_area);
+        if height[left] < height[right] {
+                max_area_recurse(&height[left+1..], max_area)
+        } else {
+                max_area_recurse(&height[..=right-1], max_area)
+        }
+}
+
 #[cfg(test)]
 pub mod tests {
         use super::*;
@@ -41,5 +57,11 @@ pub mod tests {
                 assert_eq!(49, max_area(vec![1,8,6,2,5,4,8,3,7]));
                 assert_eq!(4, max_area(vec![2,1,2]));
                 assert_eq!(1, max_area(vec![1,1]));
+        }
+        #[test]
+        fn ext2() {
+                assert_eq!(49, max_area_slices(vec![1,8,6,2,5,4,8,3,7]));
+                assert_eq!(4, max_area_slices(vec![2,1,2]));
+                assert_eq!(1, max_area_slices(vec![1,1]));
         }
 }
