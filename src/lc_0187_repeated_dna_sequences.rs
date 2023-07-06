@@ -10,16 +10,14 @@ pub fn find_repeated_dna_sequences(s: String) -> Vec<String> {
         let chars = s.chars().collect::<Vec<char>>();
         let mut sequences = chars.windows(10);
         let mut counts = HashMap::with_capacity(sequences.len());
+
         while let Some(subsequence) = sequences.next() {
                 *counts.entry(subsequence.iter().collect::<String>()).or_insert(0) += 1;
         }
-        let mut res = Vec::with_capacity(counts.len());
-        for (subsequence, count) in counts.drain() {
-                if count > 1 {
-                        res.push(subsequence);
-                }
-        }
-        res
+        
+        counts.into_iter()
+                .filter_map(|(subsequence, count)| if count > 1 { Some(subsequence) } else { None })
+                .collect()
 }
 
 
