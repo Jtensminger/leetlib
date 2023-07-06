@@ -135,3 +135,6 @@ pub use lc_0003_longest_substring_without_repeating_characters::*;
 
 pub mod lc_0424_longest_repeating_character_replacement;
 pub use lc_0424_longest_repeating_character_replacement::*;
+
+pub mod lc_0187_repeated_dna_sequences;
+pub use lc_0187_repeated_dna_sequences::*;
