@@ -7,7 +7,7 @@ Any answer with a calculation error less than 10^(-5) will be accepted.
 */
 pub fn find_max_average(nums: Vec<i32>, k: i32) -> f64 { 
         let k = k as usize;
-        let mut running_sum: i32 = nums[0..k].iter().sum();
+        let mut running_sum: i32 = nums[0..k].iter().take(k).sum();
         let mut max_sum = running_sum;
         for end in k..nums.len() {
                 running_sum += nums[end] - nums[end - k]; // constraint is k window size
@@ -15,7 +15,6 @@ pub fn find_max_average(nums: Vec<i32>, k: i32) -> f64 {
         }
         max_sum as f64 / k as f64 // question
 }
-
 
 #[cfg(test)]
 pub mod tests {
