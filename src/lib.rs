@@ -138,3 +138,6 @@ pub use lc_0424_longest_repeating_character_replacement::*;
 
 pub mod lc_0187_repeated_dna_sequences;
 pub use lc_0187_repeated_dna_sequences::*;
+
+pub mod lc_0643_maximum_average_subarray_i;
+pub use lc_0643_maximum_average_subarray_i::*;
