@@ -141,3 +141,6 @@ pub use lc_0187_repeated_dna_sequences::*;
 
 pub mod lc_0643_maximum_average_subarray_i;
 pub use lc_0643_maximum_average_subarray_i::*;
+
+pub mod lc_0219_contains_duplicate_ii;
+pub use lc_0219_contains_duplicate_ii::*;
