@@ -13,24 +13,6 @@ return true if there are two distinct indices i and j in the array such that num
         It's a decision problem, which means it's possible to short-circuit the algo if we find it because searching the whole space.
 */
 use std::collections::HashSet;
-pub fn dcontains_nearby_duplicate(nums: Vec<i32>, k: i32) -> bool {
-        let (mut start, mut end) = (0, 0);
-        let mut container: HashSet<i32> = HashSet::with_capacity(k as usize);
-        while end <= nums.len() - 1 { // search for start until breaking max_window_size: then increment start
-                if end - start <= k as usize - 1 {
-                        if container.contains(&nums[end]) { 
-                                return true; // success! we found a duplicate and it's less than k steps away from start
-                        }
-                        container.insert(nums[end]);
-                        end += 1; // grow window size until == k
-                } else {
-                        container.remove(&nums[start]);
-                        start += 1;
-                }
-        }
-        false
-}
-
 pub fn contains_nearby_duplicate(nums: Vec<i32>, k: i32) -> bool {
         let mut start = 0;
         let mut container: HashSet<i32> = HashSet::with_capacity(k as usize);

@@ -144,3 +144,6 @@ pub use lc_0643_maximum_average_subarray_i::*;
 
 pub mod lc_0219_contains_duplicate_ii;
 pub use lc_0219_contains_duplicate_ii::*;
+
+pub mod lc_0220_contains_duplicate_iii;
+pub use lc_0220_contains_duplicate_iii::*;
