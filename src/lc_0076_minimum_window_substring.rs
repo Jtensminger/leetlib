@@ -12,8 +12,8 @@ pub fn min_window(s: String, t: String) -> String {
         }
         let s = s.chars().collect::<Vec<char>>();
         /* will optimize this to just be 52 instead of 256 */
-        let mut window_count = [0 as i32; 256]; 
-        let mut t_count = [0 as i32; 256];
+        let mut window_count = [0 as i32; 128]; 
+        let mut t_count = [0 as i32; 128];
         /* create char frequency counts for t & # of unique characters  */
         let (mut have, mut need) = (0, 0);
         t.chars().into_iter().for_each(|ch| {
@@ -49,7 +49,6 @@ pub fn min_window(s: String, t: String) -> String {
         if l > -1 && r > -1 {
                 return s[l as usize..=r as usize].iter().collect()
         }
-        dbg!("here");
         "".to_string()
 }
 
