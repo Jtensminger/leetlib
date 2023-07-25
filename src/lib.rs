@@ -147,3 +147,6 @@ pub use lc_0219_contains_duplicate_ii::*;
 
 pub mod lc_0220_contains_duplicate_iii;
 pub use lc_0220_contains_duplicate_iii::*;
+
+pub mod lc_0076_minimum_window_substring;
+pub use lc_0076_minimum_window_substring::*;
