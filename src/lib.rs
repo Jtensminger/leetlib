@@ -150,3 +150,6 @@ pub use lc_0220_contains_duplicate_iii::*;
 
 pub mod lc_0076_minimum_window_substring;
 pub use lc_0076_minimum_window_substring::*;
+
+pub mod lc_0153_find_minimum_in_rotated_sorted_array;
+pub use lc_0153_find_minimum_in_rotated_sorted_array::*;
