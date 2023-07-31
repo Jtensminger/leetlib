@@ -155,3 +155,6 @@ pub mod lc_0153_find_minimum_in_rotated_sorted_array;
 pub use lc_0153_find_minimum_in_rotated_sorted_array::*;
 pub mod lc_0069_sqrt_x;
 pub use lc_0069_sqrt_x::*;
+
+pub mod lc_0033_search_in_rotated_sorted_array;
+pub use lc_0033_search_in_rotated_sorted_array::*;
