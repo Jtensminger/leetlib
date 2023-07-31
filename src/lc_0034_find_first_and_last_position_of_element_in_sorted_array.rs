@@ -16,7 +16,7 @@ pub mod tests {
         #[test]
         fn ext1() {
                 assert_eq!(vec![3,4], search_range(vec![5,7,7,8,8,10], 8));
-                //assert_eq!(vec![-1,-1], search_range(vec![5,7,7,8,8,10], 6));
-                //assert_eq!(vec![-1,-1], search_range(vec![], 0));
+                assert_eq!(vec![-1,-1], search_range(vec![5,7,7,8,8,10], 6));
+                assert_eq!(vec![-1,-1], search_range(vec![], 0));
         }
 }
