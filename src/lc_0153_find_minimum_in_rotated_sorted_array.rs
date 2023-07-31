@@ -18,31 +18,19 @@
                 sliding window
 
 */
-
+/* find partition index, binary search each half until we find answer */
 pub fn find_min(nums: Vec<i32>) -> i32 {
-        let (mut left, mut right) = (0, nums.len() - 1);
-        // //let mut rotations = 0;
-        let mut mid = match nums.len() % 2 {
-                 0 => nums.len() / 2,
-                 _ => (nums.len() / 2) + 1
-        };
-
-        /* nums[left] > nums[mid]; nums[mid] > nums[right]; nums[left] > nums[right]; */
-        while nums[left] < nums[right] {
-                mid = match nums.len() % 2 {
-                        0 => nums.len() / 2,
-                        _ => (nums.len() / 2) + 1
-                };  
-                dbg!(left); dbg!(mid); dbg!(right);
-                
-                if mid > left {
-                        right = mid;
-                } else if mid < left {
-                        left = mid;
-                }                
+        let split = nums.partition_point(|&x| x >= nums[0]);
+        if split == nums.len() {
+                nums[0]
+        } else {
+                nums[split]
         }
+        // if target > nums[0] { // search 0..split
+                
+        // } else { // search split..nums.len()
 
-        nums[left]
+        // }
 }
 
 #[cfg(test)]
@@ -51,7 +39,8 @@ pub mod tests {
 
         #[test]
         fn ext1() {
+                assert_eq!(0, find_min(vec![0,1,2,3,4]));
                 assert_eq!(1, find_min(vec![3,4,5,1,2]));
-                //assert_eq!(0, find_min(vec![4,5,6,7,0,1,2]));
+                assert_eq!(0, find_min(vec![4,5,6,7,0,1,2]));
         }
 }

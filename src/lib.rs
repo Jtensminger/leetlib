@@ -161,6 +161,3 @@ pub use lc_0033_search_in_rotated_sorted_array::*;
 
 pub mod lc_0162_find_peak_element;
 pub use lc_0162_find_peak_element::*;
-
-pub mod lc_0062_find_peak_element;
-pub use lc_0062_find_peak_element::*;
