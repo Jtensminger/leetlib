@@ -153,3 +153,5 @@ pub use lc_0076_minimum_window_substring::*;
 
 pub mod lc_0153_find_minimum_in_rotated_sorted_array;
 pub use lc_0153_find_minimum_in_rotated_sorted_array::*;
+pub mod lc_0069_sqrt_x;
+pub use lc_0069_sqrt_x::*;
