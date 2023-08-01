@@ -167,3 +167,6 @@ pub use lc_0034_find_first_and_last_position_of_element_in_sorted_array::*;
 
 pub mod lc_0658_find_k_closest_elements;
 pub use lc_0658_find_k_closest_elements::*;
+
+pub mod lc_0154_find_minimum_in_rotated_sorted_array_ii;
+pub use lc_0154_find_minimum_in_rotated_sorted_array_ii::*;
