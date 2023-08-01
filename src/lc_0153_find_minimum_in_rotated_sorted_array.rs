@@ -37,9 +37,10 @@ pub fn find_min(nums: Vec<i32>) -> i32 {
         if nums.len() == 1 { return nums[0] }
         let mid = nums.len() / 2;
         if nums[nums.len() - 1] < nums[mid - 1] {
-                return find_min(nums[mid..nums.len()].to_vec())
+                find_min(nums[mid..nums.len()].to_vec())
+        } else {
+                find_min(nums[0..mid].to_vec())
         }
-        find_min(nums[0..mid].to_vec())
 }
 
 #[cfg(test)]
