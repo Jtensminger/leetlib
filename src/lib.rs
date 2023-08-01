@@ -164,3 +164,6 @@ pub use lc_0162_find_peak_element::*;
 
 pub mod lc_0034_find_first_and_last_position_of_element_in_sorted_array;
 pub use lc_0034_find_first_and_last_position_of_element_in_sorted_array::*;
+
+pub mod lc_0658_find_k_closest_elements;
+pub use lc_0658_find_k_closest_elements::*;
