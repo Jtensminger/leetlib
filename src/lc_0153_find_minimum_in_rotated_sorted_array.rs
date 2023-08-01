@@ -19,18 +19,27 @@
 
 */
 /* find partition index, binary search each half until we find answer */
+// pub fn find_min(nums: Vec<i32>) -> i32 {
+//         let (mut left, mut right) = (0, nums.len());
+//         //x >= nums[0]
+//         while left < right {
+//                 let mid = (left + right) / 2;
+//                 if nums[mid] >= nums[0] { // search right
+//                         left = mid + 1;
+//                 } else { // search left => nums[mid] < nums[0]
+//                         right = mid;
+//                 }
+//         }
+//         nums[right%nums.len()]
+// }
+
 pub fn find_min(nums: Vec<i32>) -> i32 {
-        let (mut left, mut right) = (0, nums.len());
-        //x >= nums[0]
-        while left < right {
-                let mid = (left + right) / 2;
-                if nums[mid] >= nums[0] { // search right
-                        left = mid + 1;
-                } else { // search left => nums[mid] < nums[0]
-                        right = mid;
-                }
+        if nums.len() == 1 { return nums[0] }
+        let mid = nums.len() / 2;
+        if nums[nums.len() - 1] < nums[mid - 1] {
+                return find_min(nums[mid..nums.len()].to_vec())
         }
-        nums[right%nums.len()]
+        find_min(nums[0..mid].to_vec())
 }
 
 #[cfg(test)]
