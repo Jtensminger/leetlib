@@ -170,3 +170,6 @@ pub use lc_0658_find_k_closest_elements::*;
 
 pub mod lc_0154_find_minimum_in_rotated_sorted_array_ii;
 pub use lc_0154_find_minimum_in_rotated_sorted_array_ii::*;
+
+pub mod lc_0349_intersection_of_two_arrays;
+pub use lc_0349_intersection_of_two_arrays::*;
