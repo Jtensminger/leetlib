@@ -176,3 +176,6 @@ pub use lc_0349_intersection_of_two_arrays::*;
 
 pub mod lc_0036_valid_sodoku;
 pub use lc_0036_valid_sodoku::*;
+
+pub mod lc_0167_two_sum_ii_input_array_is_sorted;
+pub use lc_0167_two_sum_ii_input_array_is_sorted::*;
