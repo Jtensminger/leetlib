@@ -1,10 +1,29 @@
 
+/* uses one HashSet to check rules */
+// use std::collections::HashSet;
+// pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
+//         let mut decisions: HashSet<String> = HashSet::with_capacity(729);
+//         for row in 0..9 {
+//                 for column in 0..9 {
+//                         let entry = board[row][column];
+//                         if entry != '.' {
+//                                 let region = 3 * (row / 3) + (column / 3);
+//                                 let valid_row    = decisions.insert(format!("r{}{}", row, entry));
+//                                 let valid_column = decisions.insert(format!("c{}{}", column, entry));
+//                                 let valid_region = decisions.insert(format!("z{}{}", region, entry));
+//                                 if !(valid_row && valid_column && valid_region) {
+//                                         return false;
+//                                 }
+//                          }
+//                 }
+//         }
+//         true
+// }
 use std::collections::HashSet;
 pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
         let mut    rows: HashSet<(usize, char)> = HashSet::with_capacity(81);
         let mut columns: HashSet<(usize, char)> = HashSet::with_capacity(81);
         let mut regions: HashSet<(usize, char)> = HashSet::with_capacity(81);
-        /* test rows, columns, & regions */
         for r_i in 0..9 {
                 for c_i in 0..9 {
                         let entry = board[r_i][c_i];
@@ -20,8 +39,6 @@ pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
         }
         true
 }
-
-
 
 #[cfg(test)]
 pub mod tests {
