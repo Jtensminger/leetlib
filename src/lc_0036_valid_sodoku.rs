@@ -1,56 +1,28 @@
 
 use std::collections::HashSet;
 pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
-        let mut set: HashSet<char> = HashSet::with_capacity(9);
-        let mut regions: Vec<HashSet<char>> = vec![HashSet::with_capacity(9); 9];
-        /* test rows && regions */
+        let mut    rows: HashSet<(usize, char)> = HashSet::with_capacity(81);
+        let mut columns: HashSet<(usize, char)> = HashSet::with_capacity(81);
+        let mut regions: HashSet<(usize, char)> = HashSet::with_capacity(81);
+        /* test rows, columns, & regions */
         for r_i in 0..9 {
                 for c_i in 0..9 {
-                        let cell = board[r_i][c_i];
-                        if cell != '.' {
-                                if !set.insert(cell) || !regions[cell_region(r_i, c_i)].insert(cell) {
+                        let entry = board[r_i][c_i];
+                        if entry != '.' {
+                                let    valid_row = rows.insert((r_i, entry));
+                                let    valid_col = columns.insert((c_i, entry));
+                                let valid_region = regions.insert((3 * (r_i / 3) + (c_i / 3), entry));
+                                if !(valid_row && valid_col && valid_region) {
                                         return false
                                 }
-                        }
+                         }
                 }
-                set.clear()
-        }
-        
-        /* test columns */
-        for c_i in 0..9 {
-                for r_i in 0..9 {
-                        let cell = board[r_i][c_i];
-                        if cell != '.' && !set.insert(cell) {
-                                return false
-                        }
-                }
-                set.clear()
         }
         true
 }
 
-fn cell_region(r_i: usize, c_i: usize) -> usize {
-        match (r_i, c_i) {
-                (0..=2, 0..=2) => 0,
-                (0..=2, 3..=5) => 1,
-                (0..=2, 6..=8) => 2,                                
-                (3..=5, 0..=2) => 3,
-                (3..=5, 3..=5) => 4,
-                (3..=5, 6..=8) => 5,
-                (6..=8, 0..=2) => 6,
-                (6..=8, 3..=5) => 7,
-                _ => 8
-        }
-}
-/* 
-        naive: teach each rule seperately:
-                for each row:
-                        test rule
-                for each column:
-                        test rule
-                for each region:
-                        test rule
-*/
+
+
 #[cfg(test)]
 pub mod tests {
         use super::*;
