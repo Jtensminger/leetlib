@@ -1,6 +1,3 @@
-/*
-
-*/
 pub fn max_depth(s: String) -> i32 {
         let mut depth: i32 = 0;
         let mut max_depth: i32 = 0;
