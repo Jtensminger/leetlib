@@ -1,4 +1,4 @@
-fn remove_outer_parentheses(s: String) -> String {
+pub fn remove_outer_parentheses(s: String) -> String {
         let mut res = String::with_capacity(s.len());        
         let mut depth = 0;
         for ch in s.chars() {
