@@ -182,3 +182,6 @@ pub use lc_0167_two_sum_ii_input_array_is_sorted::*;
 
 pub mod lc_1624_max_nesting_depth_of_parentheses;
 pub use lc_1624_max_nesting_depth_of_parentheses::*;
+
+pub mod lc_1021_remove_outermost_parentheses;
+pub use lc_1021_remove_outermost_parentheses::*;
