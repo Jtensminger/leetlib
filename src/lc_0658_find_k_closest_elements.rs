@@ -6,7 +6,7 @@ An integer a is closer to x than an integer b if:
         |a - x| == |b - x| and a < b
 */
 /* explanation: https://leetcode.com/problems/find-k-closest-elements/solutions/1310981/simple-solutions-w-explanation-all-possible-approaches-explained/ */
-pub fn find_closest_elements(arr: Vec<i32>, k: i32, x: i32) -> Vec<i32> {
+fn find_closest_elements(arr: Vec<i32>, k: i32, x: i32) -> Vec<i32> {
         let (mut left, mut right) = (0, arr.len() - k as usize); /* guarentees our window size is correct */
         while left < right {
                 let mid = (left + right) / 2;
@@ -23,7 +23,7 @@ pub fn find_closest_elements(arr: Vec<i32>, k: i32, x: i32) -> Vec<i32> {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
         #[test]
         fn ext1() {

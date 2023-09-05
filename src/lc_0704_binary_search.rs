@@ -1,7 +1,7 @@
 /* #TAGS[Binary Search, Array] #DIFFICULTY[Easy] #URL[https://leetcode.com/problems/binary-search/] */
 
 use std::cmp::Ordering::{Greater,Equal,Less};
-pub fn search(nums: Vec<i32>, target: i32) -> i32 {        
+fn search(nums: Vec<i32>, target: i32) -> i32 {        
         if nums.len() == 0 { return -1 }
         let (mut start, mut end) = (0, nums.len());
         while start < end {

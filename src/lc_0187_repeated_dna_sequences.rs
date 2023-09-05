@@ -6,7 +6,7 @@
 
 /* sliding window strategy */
 use std::collections::HashMap;
-pub fn find_repeated_dna_sequences(s: String) -> Vec<String> {
+fn find_repeated_dna_sequences(s: String) -> Vec<String> {
         let chars = s.chars().collect::<Vec<char>>();
         let mut sequences = chars.windows(10);
         let mut counts = HashMap::with_capacity(sequences.len());
@@ -22,7 +22,7 @@ pub fn find_repeated_dna_sequences(s: String) -> Vec<String> {
 
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
         use std::collections::HashSet;
         #[test]

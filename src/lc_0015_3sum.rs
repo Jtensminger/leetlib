@@ -5,7 +5,8 @@
                 sum to zero => i + j + k == 0
 */
 use std::collections::HashSet;
-pub fn naive_three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
+#[allow(dead_code)]
+fn naive_three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
         /* find all possible triplets (e.g index combinations) & store the valid ones */
         let mut valid_triplets: HashSet<Vec<i32>> = HashSet::with_capacity(nums.capacity());
         for i in 0..nums.len() {
@@ -30,7 +31,8 @@ pub fn naive_three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
 }
 
 use std::cmp::Ordering::{Equal, Greater, Less};
-pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
+#[allow(dead_code)]
+fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let mut nums = nums;
         nums.sort();
         let mut ans: Vec<Vec<i32>> = Vec::new();

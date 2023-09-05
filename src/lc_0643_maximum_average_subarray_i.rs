@@ -5,7 +5,7 @@ Any answer with a calculation error less than 10^(-5) will be accepted.
 "contiguous subarray whose length is equal to k" -> constraint
 "maximum average value" -> question
 */
-pub fn find_max_average(nums: Vec<i32>, k: i32) -> f64 { 
+fn find_max_average(nums: Vec<i32>, k: i32) -> f64 { 
         let k = k as usize;
         let mut running_sum: i32 = nums[0..k].iter().take(k).sum();
         let mut max_sum = running_sum;
@@ -17,7 +17,7 @@ pub fn find_max_average(nums: Vec<i32>, k: i32) -> f64 {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
 
         #[test]

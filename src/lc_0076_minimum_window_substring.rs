@@ -6,7 +6,7 @@ If there is no such substring, return the empty string "".
 
 /* min window of S that includes every character of T (including duplicates) */
 
-pub fn min_window(s: String, t: String) -> String {
+fn min_window(s: String, t: String) -> String {
         if t.is_empty() || s.len() < t.len() {
                 return "".to_string();
         }
@@ -53,7 +53,7 @@ pub fn min_window(s: String, t: String) -> String {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
         /*
                 "a" = 97 "b" = 98

@@ -1,13 +1,14 @@
 
 //Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
+struct TreeNode {
         pub val: i32,
         pub left: Option<Rc<RefCell<TreeNode>>>,
         pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
 impl TreeNode {
+        #[allow(dead_code)]
         #[inline]
         pub fn new(val: i32) -> Self {
                 TreeNode {
@@ -22,7 +23,8 @@ use std::rc::Rc;
 use std::cell::RefCell;
 use std::cmp;
 
-pub fn diameter_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+#[allow(dead_code)]
+fn diameter_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         // get the height of left & right sub-trees
         // diameter = sum of left & right heights
         match root {
@@ -30,7 +32,7 @@ pub fn diameter_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         }
 }
 
-pub fn dfs(sub_tree: &Option<Rc<RefCell<TreeNode>>>) -> (i32,i32) {
+fn dfs(sub_tree: &Option<Rc<RefCell<TreeNode>>>) -> (i32,i32) {
         // None == 0
         // Some == Count of levels
         match sub_tree {

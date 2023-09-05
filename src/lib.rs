@@ -153,6 +153,7 @@ pub use lc_0076_minimum_window_substring::*;
 
 pub mod lc_0153_find_minimum_in_rotated_sorted_array;
 pub use lc_0153_find_minimum_in_rotated_sorted_array::*;
+
 pub mod lc_0069_sqrt_x;
 pub use lc_0069_sqrt_x::*;
 
@@ -185,3 +186,7 @@ pub use lc_1624_max_nesting_depth_of_parentheses::*;
 
 pub mod lc_1021_remove_outermost_parentheses;
 pub use lc_1021_remove_outermost_parentheses::*;
+
+pub mod lc_0155_min_stack;
+pub use lc_0155_min_stack::*;
+

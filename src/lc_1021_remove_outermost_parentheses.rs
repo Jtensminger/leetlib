@@ -1,4 +1,4 @@
-pub fn remove_outer_parentheses(s: String) -> String {
+fn remove_outer_parentheses(s: String) -> String {
         let mut res = String::with_capacity(s.len());        
         let mut depth = 0;
         for ch in s.chars() {
@@ -13,7 +13,7 @@ pub fn remove_outer_parentheses(s: String) -> String {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
 
         #[test]

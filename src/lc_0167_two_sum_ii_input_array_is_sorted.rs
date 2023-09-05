@@ -20,7 +20,7 @@ pub fn two_sum(numbers: Vec<i32>, target: i32) -> Vec<i32> {
         (-1000..-1) => l & r > target_i
 */
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
 
         #[test]

@@ -31,7 +31,7 @@ Algo:
         return acc
 */
 
-pub fn roman_to_int(s: String) -> i32 {
+fn roman_to_int(s: String) -> i32 {
 	let mut acc: i32 = 0; 
 	let mut s = s.chars().peekable();
 	while let Some(c) = s.next() {

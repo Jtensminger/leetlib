@@ -17,7 +17,7 @@ Algo:
 
 use std::collections::HashMap;
 
-pub fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
+fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
 
         // hashmap of the sorted version of each string
         let mut map: HashMap<[u8; 26], Vec<String>> = HashMap::with_capacity(strs.len());
@@ -38,7 +38,7 @@ pub fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
         #[test]
         fn ext1() {

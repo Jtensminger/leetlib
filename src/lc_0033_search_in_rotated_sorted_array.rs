@@ -2,7 +2,7 @@
 // binary search on a possibly rotated array
 // Find Pivot Index + Binary Search
 
-pub fn search(nums: Vec<i32>, target: i32) -> i32 {
+fn search(nums: Vec<i32>, target: i32) -> i32 {
         let split = nums.partition_point(|&x| x >= nums[0]);
         if target < nums[0] {
                 if let Ok(i) = nums[split..].binary_search(&target) {
@@ -20,7 +20,7 @@ pub fn search(nums: Vec<i32>, target: i32) -> i32 {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
     use super::*;
 
     #[test]

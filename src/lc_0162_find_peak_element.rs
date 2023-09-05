@@ -4,7 +4,7 @@ Given a 0-indexed integer array nums, find a peak element, and return its index.
 An element is always considered to be strictly greater than a neighbor that is outside the array.
 You must write an algorithm that runs in O(log n) time.
 */
-pub fn find_peak_element(nums: Vec<i32>) -> i32 {
+fn find_peak_element(nums: Vec<i32>) -> i32 {
         if nums.len() == 1 {
                 return 0
         }
@@ -23,7 +23,7 @@ pub fn find_peak_element(nums: Vec<i32>) -> i32 {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
 
         #[test]

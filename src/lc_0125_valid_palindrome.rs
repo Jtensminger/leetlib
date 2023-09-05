@@ -37,7 +37,7 @@ Constraints:
         
  */
 
-pub fn is_palindrome(s: String) -> bool {
+fn is_palindrome(s: String) -> bool {
         
         let mut filtered_input = s.chars()
                 .filter_map( |c| 

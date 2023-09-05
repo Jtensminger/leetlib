@@ -2,7 +2,7 @@
 use std::collections::HashMap;
 
 // BRUTE FORCE
-pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
 	
 	let mut hm: HashMap<i32, i32> = HashMap::new();
 

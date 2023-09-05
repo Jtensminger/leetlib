@@ -13,7 +13,7 @@ pub fn max_depth(s: String) -> i32 {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
 
         #[test]

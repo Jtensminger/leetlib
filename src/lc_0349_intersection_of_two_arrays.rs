@@ -1,13 +1,13 @@
 
 use std::collections::HashSet;
-pub fn intersection(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
+fn intersection(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
         let set1: HashSet<_> = nums1.iter().cloned().collect();
         let set2: HashSet<_> = nums2.iter().cloned().collect();
         set1.intersection(&set2).cloned().collect()
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
         /* Given two integer arrays nums1 and nums2, return an array of their intersection.
         Each element in the result must be unique and you may return the result in any order. */

@@ -51,7 +51,7 @@ pub fn max_area_recurse(height: &[i32], max_area: i32) -> i32 {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
         #[test]
         fn ext1() {

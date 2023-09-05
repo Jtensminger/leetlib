@@ -4,7 +4,7 @@ The returned integer should be non-negative as well.
 You must not use any built-in exponent function or operator.
  */
 use std::cmp::Ordering;
-pub fn my_sqrt(x: i32) -> i32 {
+fn my_sqrt(x: i32) -> i32 {
         if x == 0 { // non-negative => 0 is allowed
                 return 0
         }
@@ -33,7 +33,7 @@ pub fn my_sqrt(x: i32) -> i32 {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
     use super::*;
 
     #[test]

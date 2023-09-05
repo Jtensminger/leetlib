@@ -35,7 +35,7 @@ node properties:
 
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
+struct TreeNode {
   pub val: i32,
   pub left: Option<Rc<RefCell<TreeNode>>>,
   pub right: Option<Rc<RefCell<TreeNode>>>,
@@ -55,12 +55,14 @@ impl TreeNode {
 use std::rc::Rc;
 use std::cell::RefCell;
 
-pub fn lowest_common_ancestor(root: Option<Rc<RefCell<TreeNode>>>, p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
+#[allow(dead_code)]
+fn lowest_common_ancestor(root: Option<Rc<RefCell<TreeNode>>>, p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
         let p_val = p.unwrap().borrow().val;   
         let q_val = q.unwrap().borrow().val;
         lca_recursive(&root, p_val, q_val)
 }
 
+#[allow(dead_code)]
 fn lca_recursive(root: &Option<Rc<RefCell<TreeNode>>>, lower: i32, higher: i32) -> Option<Rc<RefCell<TreeNode>>> {
         if lower > higher {
                 return lca_recursive(root, higher, lower);

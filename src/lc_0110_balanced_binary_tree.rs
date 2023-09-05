@@ -4,7 +4,7 @@
 use std::rc::Rc;
 use std::cell::RefCell;
 #[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
+struct TreeNode {
         pub val: i32,
         pub left: Option<Rc<RefCell<TreeNode>>>,
         pub right: Option<Rc<RefCell<TreeNode>>>,
@@ -29,7 +29,7 @@ Definition: Height-balanced...
         never differs by more than one
  */
 
-pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
+fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         height(&root) != -1
 }
 

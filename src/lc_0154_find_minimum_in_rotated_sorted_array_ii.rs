@@ -1,5 +1,5 @@
 
-pub fn find_min(nums: Vec<i32>) -> i32 {
+fn find_min(nums: Vec<i32>) -> i32 {
         let len = nums.len();
         /* base case */
         if len == 1 {
@@ -29,7 +29,7 @@ pub fn find_min(nums: Vec<i32>) -> i32 {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
 
         #[test]

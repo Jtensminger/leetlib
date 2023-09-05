@@ -1,5 +1,5 @@
 use std::collections::BTreeSet;
-pub fn contains_nearby_almost_duplicate(nums: Vec<i32>, index_diff: i32, value_diff: i32) -> bool {
+fn contains_nearby_almost_duplicate(nums: Vec<i32>, index_diff: i32, value_diff: i32) -> bool {
         let index_diff = index_diff as usize;
         // Acts as a window for items within a `k` wide range.
         let mut window = BTreeSet::new();
@@ -21,7 +21,7 @@ pub fn contains_nearby_almost_duplicate(nums: Vec<i32>, index_diff: i32, value_d
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
 
         #[test]

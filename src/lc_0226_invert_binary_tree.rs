@@ -6,14 +6,14 @@ use std::cell::{RefCell};
 
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode<T> {
+struct TreeNode<T> {
         pub val: T,
         pub left: Link<T>,
         pub right: Link<T>,
 }
 
 type Link<T> = Option<Rc<RefCell<TreeNode<T>>>>;
-
+#[allow(dead_code)]
 impl<T> TreeNode<T> {
         pub fn new(val: T) -> Self {
                 TreeNode {
@@ -43,7 +43,7 @@ impl<T> TreeNode<T> {
         // }
 }
 
-pub fn invert_tree<T> (root: Link<T>) -> Link<T> {
+fn invert_tree<T> (root: Link<T>) -> Link<T> {
         
         if let Some(node) = root.as_ref() {
                 let mut mut_node = node.borrow_mut();

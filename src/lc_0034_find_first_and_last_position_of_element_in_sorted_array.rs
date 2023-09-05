@@ -2,7 +2,7 @@
 Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
 If target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.
 */
-pub fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
+fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
         match nums.binary_search(&target) {
                 Ok(_) => vec![nums.partition_point(|&x| x < target) as i32, nums.partition_point(|&x| x <= target) as i32 - 1],
                 Err(_) => vec![-1, -1]
@@ -10,7 +10,7 @@ pub fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
 
         #[test]

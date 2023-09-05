@@ -1,6 +1,6 @@
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
+struct ListNode {
     pub val: i32,
     pub next: Option<Box<ListNode>>
 }
@@ -14,7 +14,8 @@ pub struct ListNode {
 //     }
 // }
 
-pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+#[allow(dead_code)]
+fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let (mut prev, mut curr) = (None, head);
 
         while let Some(mut node) = curr {

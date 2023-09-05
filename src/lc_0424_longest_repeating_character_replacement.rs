@@ -4,7 +4,7 @@
         You can perform this operation at most k times.
         Return the length of the longest substring containing the same letter you can get after performing the above operations.
 */
-pub fn character_replacement(s: String, k: i32) -> i32 {
+fn character_replacement(s: String, k: i32) -> i32 {
         let s: Vec<char> = s.chars().into_iter().collect();
         let mut counts = [0; 26];
         let (mut max_sub, mut max_ch, mut start) = (0, 0, 0);
@@ -26,7 +26,7 @@ pub fn character_replacement(s: String, k: i32) -> i32 {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
 
         #[test]

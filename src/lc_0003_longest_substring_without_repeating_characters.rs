@@ -26,7 +26,7 @@
 /* Sliding Window w/ Set */
 use std::collections::HashSet;
 
-pub fn length_of_longest_substring(s: String) -> i32 {
+fn length_of_longest_substring(s: String) -> i32 {
         let (mut start, mut max_len) = (0, 0);
         let mut chars_seen = HashSet::with_capacity(s.len());
         for end in 0..s.len() {
@@ -45,7 +45,7 @@ pub fn length_of_longest_substring(s: String) -> i32 {
 }
 
 #[cfg(test)]
-pub mod tests {
+mod tests {
         use super::*;
 
         #[test]
