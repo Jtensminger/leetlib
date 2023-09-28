@@ -190,3 +190,6 @@ pub use lc_1021_remove_outermost_parentheses::*;
 pub mod lc_0155_min_stack;
 pub use lc_0155_min_stack::*;
 
+
+pub mod lc_0905_sort_array_by_parity;
+pub use lc_0905_sort_array_by_parity::*;
