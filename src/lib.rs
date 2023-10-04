@@ -193,3 +193,6 @@ pub use lc_0155_min_stack::*;
 
 pub mod lc_0905_sort_array_by_parity;
 pub use lc_0905_sort_array_by_parity::*;
+
+pub mod lc_0875_koko_eating_bananas;
+pub use lc_0875_koko_eating_bananas::*;
