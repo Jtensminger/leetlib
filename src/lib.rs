@@ -196,3 +196,5 @@ pub use lc_0905_sort_array_by_parity::*;
 
 pub mod lc_0875_koko_eating_bananas;
 pub use lc_0875_koko_eating_bananas::*;
+pub mod lc_1464_max_product_two_elements_in_array;
+pub use lc_1464_max_product_two_elements_in_array::*;
