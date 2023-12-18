@@ -198,3 +198,6 @@ pub mod lc_0875_koko_eating_bananas;
 pub use lc_0875_koko_eating_bananas::*;
 pub mod lc_1464_max_product_two_elements_in_array;
 pub use lc_1464_max_product_two_elements_in_array::*;
+
+pub mod lc_1460_make_two_arr_equal_by_reversing_sub_arrays;
+pub use lc_1460_make_two_arr_equal_by_reversing_sub_arrays::*;
