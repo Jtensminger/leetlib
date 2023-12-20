@@ -201,3 +201,6 @@ pub use lc_1464_max_product_two_elements_in_array::*;
 
 pub mod lc_1460_make_two_arr_equal_by_reversing_sub_arrays;
 pub use lc_1460_make_two_arr_equal_by_reversing_sub_arrays::*;
+
+pub mod lc_1450_number_of_students_doing_homework_at_a_given_time;
+pub use lc_1450_number_of_students_doing_homework_at_a_given_time::*;
