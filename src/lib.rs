@@ -204,3 +204,6 @@ pub use lc_1460_make_two_arr_equal_by_reversing_sub_arrays::*;
 
 pub mod lc_1450_number_of_students_doing_homework_at_a_given_time;
 pub use lc_1450_number_of_students_doing_homework_at_a_given_time::*;
+
+pub mod lc_0150_evaluate_reverse_polish_notation;
+pub use lc_0150_evaluate_reverse_polish_notation::*;
