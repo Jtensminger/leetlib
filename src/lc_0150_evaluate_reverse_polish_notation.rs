@@ -12,7 +12,7 @@ pub fn eval_rpn(tokens: Vec<String>) -> i32 {
                                         "-" => i32::sub,
                                         "*" => i32::mul,
                                         "/" => i32::div,
-                                        _ => i32::add,
+                                        _ => unreachable!(),
                                 };
                                 stack.push(op(first, second));
                         }
