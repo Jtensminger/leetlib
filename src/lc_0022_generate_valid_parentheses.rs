@@ -1,6 +1,6 @@
 fn generate_parenthesis(n: i32) -> Vec<String> {
         let mut res = Vec::with_capacity(n as usize);
-        let mut stack = Vec::new();
+        let mut stack: Vec<(String, i32, i32)> = Vec::new();
 
         stack.push((String::new(), n, n));
 
