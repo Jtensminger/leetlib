@@ -210,3 +210,6 @@ pub use lc_0150_evaluate_reverse_polish_notation::*;
 
 pub mod lc_0022_generate_valid_parentheses;
 pub use lc_0022_generate_valid_parentheses::*;
+
+pub mod lc_0739_daily_temperatures;
+pub use lc_0739_daily_temperatures::*;
