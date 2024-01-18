@@ -5,13 +5,8 @@ fn generate_parenthesis(n: i32) -> Vec<String> {
         stack.push((String::new(), n, n));
 
         while let Some((s, open, close)) = stack.pop() {
-                // dbg!(&s);
-                // dbg!(open);
-                // dbg!(close);
                 if open == 0 && close == 0 {
                         res.push(s);
-//                        dbg!(&res.last().unwrap());
-
                 } else {
                         if open > 0 {
                                 stack.push((s.clone() + "(", open - 1, close));
